@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.navigation li {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.navigation a:hover {
+  color: #09f;
+}
