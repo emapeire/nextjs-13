@@ -1,6 +1,13 @@
+import Link from "next/link";
+import { LikeButton } from "./LikeButton";
+
 const fetchPosts = async () => {
   try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      next: {
+        revalidate: 60,
+      },
+    });
     if (!res.ok) {
       throw new Error("Network response was not ok");
     }
@@ -16,8 +23,13 @@ export async function ListOfPosts() {
 
   return posts.slice(0, 5).map((posts) => (
     <article key={posts.id}>
-      <h2>{posts.title}</h2>
+      <Link href={`/posts/${posts.id}`}>
+        <h2>{posts.title}</h2>
+      </Link>
       <p>{posts.body}</p>
+      <div className="flex justify-end m-4">
+        <LikeButton id={posts.id} />
+      </div>
     </article>
   ));
 }
