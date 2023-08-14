@@ -1,16 +1,16 @@
-import { Counter } from "./Counter";
+import { Views } from "./Views";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <>
       <header>
         <h1>Here are the posts...</h1>
         <div>
-          <Counter />
+          <Views />
         </div>
       </header>
       <main>{children}</main>
       <footer>© 2023</footer>
-    </div>
+    </>
   );
 }

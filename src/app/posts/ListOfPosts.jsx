@@ -22,14 +22,16 @@ export async function ListOfPosts() {
   const posts = await fetchPosts();
 
   return posts.slice(0, 5).map((posts) => (
-    <article key={posts.id}>
-      <Link href={`/posts/${posts.id}`}>
-        <h2>{posts.title}</h2>
-      </Link>
-      <p>{posts.body}</p>
-      <div className="flex justify-end m-4">
-        <LikeButton id={posts.id} />
-      </div>
-    </article>
+    <div key={posts} className="p-4">
+      <article key={posts.id}>
+        <Link href={`/posts/${posts.id}`}>
+          <h2>{posts.title}</h2>
+        </Link>
+        <p>{posts.body}</p>
+        <div className="flex justify-end mt-10">
+          <LikeButton id={posts.id} />
+        </div>
+      </article>
+    </div>
   ));
 }
