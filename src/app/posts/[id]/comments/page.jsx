@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { LikeButton } from "../../LikeButton";
 
 const fetchComments = async (id) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   try {
     const res = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${id}/comments`,
@@ -30,7 +30,9 @@ export default async function Comments({ params }) {
       <ul>
         {comments.map((comment) => (
           <li key={comment.id}>
-            <h2>{comment.name}</h2>
+            <div className="text-[#09f]">
+              <h3>{comment.name}</h3>
+            </div>
             <p>{comment.body}</p>
             <div className="flex justify-end my-10">
               <LikeButton id={comment.id} />

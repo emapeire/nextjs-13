@@ -21,7 +21,7 @@ export function SeeCommets({ id }) {
   return (
     <Link href="#" onClick={handleClick}>
       {comments ? "Hide" : "See"} <span className="text-[#09f]">comments</span>{" "}
-      👀
+      {comments ? "🙈" : "🐵"}
     </Link>
   );
 }
