@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@next/font':
+    specifier: ^13.4.16
+    version: 13.4.16
   '@types/react':
     specifier: ^18.2.20
     version: 18.2.20
@@ -147,6 +150,10 @@ packages:
     resolution: {integrity: sha512-RpZeXlPxQ9FLeYN84XHDqRN20XxmVNclYCraLYdifRsmibtcWUWdwE/ANp2C8kgesFRsvwfsw6eOkYNl9sLJ3A==}
     dependencies:
       glob: 7.1.7
+    dev: false
+
+  /@next/font@13.4.16:
+    resolution: {integrity: sha512-1UciFHgwieMfDygileymqeYPEmIeZWIfgrsa2POZlRW+yAsDt0qy0InfFAYvXhNgALTI6ix3JU2XhcuzonhQLA==}
     dev: false
 
   /@next/swc-darwin-arm64@13.4.13:
